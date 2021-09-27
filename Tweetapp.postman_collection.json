@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "128e934a-4e7c-4939-9ee7-eb6124844428",
+		"name": "Tweetapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\":\"Sachin1\",\r\n    \"LastName\":\"Tendulkar\",\r\n    \"Email\":\"Sachin33@gmail.com\",\r\n    \"LoginId\":\"Sachin33@1234\",\r\n    \"Password\":\"Sachin@9099\",\r\n    \"ConfirmPassword\":\"Sachin@909\",\r\n    \"ContactNumber\":\"1111111111\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/Account/Register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Account",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"GrantType\":\"password\",\r\n    \"UserName\":\"Sachin@1234\",\r\n    \"Password\":\"Sachin@9099\",\r\n    \"RefreshToken\":\"0297aaadf05e4fe0a426fd3d233aae4f\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/Token/Login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Token",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tweets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTYWNoaW4gVGVuZHVsa2FyIiwianRpIjoiY2I1ZWRlYTctYzMwOC00ZjU3LWJiNDgtMzY2NWFlZTNhOWNiIiwibmFtZWlkIjoiMTM2NGJjNDgtN2EzMi00N2I4LTg0MDMtZTU3MDRjNTQyZmU2Iiwicm9sZSI6IlVzZXIiLCJMb2dnZWRPbiI6IjgvMzEvMjAyMSAxOjU4OjUyIFBNIiwibmJmIjoxNjMwMzk4NTMzLCJleHAiOjE2MzAzOTk0MzIsImlhdCI6MTYzMDM5ODUzMywiaXNzIjoiaHR0cDovL3Rlc3R0d2VldGFwcC5jb20iLCJhdWQiOiJodHRwOi8vdGVzdHR3ZWV0YXBwLmNvbSJ9.ZbY_hVjMu_VsLyYMFdjxoTLM_jsSXeiCcEJiqTa4MwA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/Activity/all",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Activity",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTYWNoaW4gVGVuZHVsa2FyIiwianRpIjoiY2I1ZWRlYTctYzMwOC00ZjU3LWJiNDgtMzY2NWFlZTNhOWNiIiwibmFtZWlkIjoiMTM2NGJjNDgtN2EzMi00N2I4LTg0MDMtZTU3MDRjNTQyZmU2Iiwicm9sZSI6IlVzZXIiLCJMb2dnZWRPbiI6IjgvMzEvMjAyMSAxOjU4OjUyIFBNIiwibmJmIjoxNjMwMzk4NTMzLCJleHAiOjE2MzAzOTk0MzIsImlhdCI6MTYzMDM5ODUzMywiaXNzIjoiaHR0cDovL3Rlc3R0d2VldGFwcC5jb20iLCJhdWQiOiJodHRwOi8vdGVzdHR3ZWV0YXBwLmNvbSJ9.ZbY_hVjMu_VsLyYMFdjxoTLM_jsSXeiCcEJiqTa4MwA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Account/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Account",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTYWNoaW4gVGVuZHVsa2FyIiwianRpIjoiMTNmMzRlZGMtNDE1YS00M2NkLWE4NWUtNmYyZGFhYTRiNTJmIiwibmFtZWlkIjoiMTM2NGJjNDgtN2EzMi00N2I4LTg0MDMtZTU3MDRjNTQyZmU2Iiwicm9sZSI6IlVzZXIiLCJMb2dnZWRPbiI6IjgvMzEvMjAyMSAyOjQ3OjI2IFBNIiwibmJmIjoxNjMwNDAxNDQ2LCJleHAiOjE2MzA0MDIzNDYsImlhdCI6MTYzMDQwMTQ0NiwiaXNzIjoiaHR0cDovL3Rlc3R0d2VldGFwcC5jb20iLCJhdWQiOiJodHRwOi8vdGVzdHR3ZWV0YXBwLmNvbSJ9.bXe7O1IDGiApDsTvENZdvtM58Rb-twO2ALmjsGQ0n6k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Tweet\":\"Test Tweet\",\r\n    \"Tag\":\"Human\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Activity/Sachin@1234/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Activity",
+						"Sachin@1234",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tweets Of A User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTYWNoaW4gVGVuZHVsa2FyIiwianRpIjoiMTNmMzRlZGMtNDE1YS00M2NkLWE4NWUtNmYyZGFhYTRiNTJmIiwibmFtZWlkIjoiMTM2NGJjNDgtN2EzMi00N2I4LTg0MDMtZTU3MDRjNTQyZmU2Iiwicm9sZSI6IlVzZXIiLCJMb2dnZWRPbiI6IjgvMzEvMjAyMSAyOjQ3OjI2IFBNIiwibmJmIjoxNjMwNDAxNDQ2LCJleHAiOjE2MzA0MDIzNDYsImlhdCI6MTYzMDQwMTQ0NiwiaXNzIjoiaHR0cDovL3Rlc3R0d2VldGFwcC5jb20iLCJhdWQiOiJodHRwOi8vdGVzdHR3ZWV0YXBwLmNvbSJ9.bXe7O1IDGiApDsTvENZdvtM58Rb-twO2ALmjsGQ0n6k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Activity/GetTweets/Sachin@1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Activity",
+						"GetTweets",
+						"Sachin@1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like A Tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTYWNoaW4gVGVuZHVsa2FyIiwianRpIjoiNDNmZWU5NzgtMjA2MS00ZGYxLTlmMGMtMzY0MjM5MjQwOWNiIiwibmFtZWlkIjoiMTM2NGJjNDgtN2EzMi00N2I4LTg0MDMtZTU3MDRjNTQyZmU2Iiwicm9sZSI6IlVzZXIiLCJMb2dnZWRPbiI6IjgvMzEvMjAyMSAzOjExOjA2IFBNIiwibmJmIjoxNjMwNDAyODY2LCJleHAiOjE2MzA0MDM3NjYsImlhdCI6MTYzMDQwMjg2NiwiaXNzIjoiaHR0cDovL3Rlc3R0d2VldGFwcC5jb20iLCJhdWQiOiJodHRwOi8vdGVzdHR3ZWV0YXBwLmNvbSJ9.iSqnhd1mQutBR1ujupS2UXbjgvkJY35IK41EaRi_hDU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Activity/Sachin@1234/like/3157cc39-e8da-4676-9e72-529e1df92919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Activity",
+						"Sachin@1234",
+						"like",
+						"3157cc39-e8da-4676-9e72-529e1df92919"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
